@@ -7,6 +7,8 @@ var input_dir: Vector2 = Vector2.ZERO
 var last_dir: Vector2 = Vector2.DOWN
 var is_placing: bool = false
 
+func _ready() -> void:
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 	handle_input()

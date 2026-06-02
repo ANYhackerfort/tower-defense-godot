@@ -1,12 +1,24 @@
 [gd_scene format=4 uid="uid://dbwft6vpkmj16"]
 
 [ext_resource type="Texture2D" uid="uid://dqlsix2tefwj8" path="res://Assets/background_tiles/neo_zero_tiles_and_buildings_01.png" id="1_2a60c"]
+[ext_resource type="Script" uid="uid://13k4ymca0t63" path="res://Scenes/level_1.gd" id="1_cpkqv"]
 [ext_resource type="Texture2D" uid="uid://inok31hbbp7d" path="res://Assets/background_tiles/neo_zero_props_and_items_01.png" id="2_4iphx"]
+[ext_resource type="PackedScene" uid="uid://bq7kjrmovio76" path="res://Scenes/enemy_base.tscn" id="2_d1mwp"]
 [ext_resource type="Texture2D" uid="uid://we1akyobdgdw" path="res://Assets/background_tiles/neo_zero_tileset_02.png" id="3_jgkgd"]
 [ext_resource type="Texture2D" uid="uid://dtnj6dujqh1u2" path="res://Assets/background_tiles/neo_zero_buildings_02.png" id="4_bs12r"]
 [ext_resource type="Texture2D" uid="uid://ccrw1u6bjq72k" path="res://Assets/background_tiles/neo_zero_props_02_free.png" id="5_rqhku"]
 [ext_resource type="PackedScene" uid="uid://dqjw0v05wr4x2" path="res://Scenes/tower_spawn_interactor.tscn" id="6_cpkqv"]
 [ext_resource type="PackedScene" uid="uid://cehsu51da46dt" path="res://Scenes/player_nerd.tscn" id="7_d1mwp"]
+[ext_resource type="Script" uid="uid://bjrumk3cxx2bi" path="res://Scenes/shop_ui.gd" id="8_4iphx"]
+[ext_resource type="Script" uid="uid://dc1q7n74f3rgi" path="res://Scenes/shop_area.gd" id="8_rqhku"]
+[ext_resource type="PackedScene" uid="uid://0wskd8gfwk2v" path="res://Scenes/basic_tower.tscn" id="9_jgkgd"]
+[ext_resource type="Script" uid="uid://d13nde088d4im" path="res://Scenes/tower_placement_manager.gd" id="10_bs12r"]
+
+[sub_resource type="Curve2D" id="Curve2D_d1mwp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 708, -17, 0, 0, 0, 0, 719, 327, 0, 0, 0, 0, 449, 321, 0, 0, 0, 0, 445, 638, 0, 0, 0, 0, 132, 649, 0, 0, 0, 0, 133, 1037, 0, 0, 0, 0, -84, 1029)
+}
+point_count = 7
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_bpugw"]
 tile_data = PackedInt32Array(0, 196613, 1, 65536, 196613, 1, 131072, 196613, 1, 196608, 196613, 1, 262144, 196613, 1, 327680, 196613, 1, 393216, 196613, 1, 458752, 196613, 2, 1, 458757, 1, 65537, 458757, 1, 131073, 458757, 1, 196609, 458757, 1, 262145, 458757, 1, 327681, 458757, 1, 393217, 458757, 1, 458753, 458757, 2, 2, 327685, 1, 65538, 327685, 1, 131074, 327685, 1, 196610, 327685, 1, 262146, 327685, 1, 327682, 327685, 1, 393218, 327685, 1, 458754, 327685, 2, 3, 393221, 1, 65539, 393221, 1, 131075, 393221, 1, 196611, 393221, 1, 262147, 393221, 1, 327683, 393221, 1, 393219, 393221, 1, 458755, 393221, 2, 4, 458757, 1, 65540, 458757, 1, 131076, 458757, 1, 196612, 458757, 1, 262148, 458757, 1, 327684, 458757, 1, 393220, 458757, 1, 458756, 458757, 2, 5, 524293, 1, 65541, 524293, 1, 131077, 524293, 1, 196613, 524293, 1, 262149, 524293, 1, 327685, 524293, 1, 393221, 524293, 1, 458757, 524293, 2, 6, 196613, 1, 65542, 196613, 1, 131078, 196613, 1, 196614, 196613, 1, 262150, 196613, 1, 327686, 196613, 1, 393222, 196613, 1, 458758, 196613, 2, 7, 458757, 1, 65543, 458757, 1, 131079, 458757, 1, 196615, 458757, 1, 262151, 458757, 1, 327687, 458757, 1, 393223, 458757, 1, 458759, 458757, 2, 8, 327685, 1, 65544, 327685, 1, 131080, 327685, 1, 196616, 327685, 1, 262152, 327685, 1, 327688, 327685, 1, 393224, 327685, 1, 458760, 327685, 2, 9, 393221, 1, 65545, 393221, 1, 131081, 393221, 1, 196617, 393221, 1, 262153, 393221, 1, 327689, 393221, 1, 393225, 393221, 1, 458761, 393221, 2, 10, 458757, 1, 65546, 458757, 1, 131082, 458757, 1, 196618, 458757, 1, 262154, 458757, 1, 327690, 458757, 1, 393226, 458757, 1, 458762, 458757, 2, 11, 196613, 1, 65547, 196613, 1, 131083, 196613, 1, 196619, 196613, 1, 262155, 196613, 1, 327691, 196613, 1, 393227, 196613, 1, 458763, 196613, 2)
@@ -767,7 +779,64 @@ pattern_1 = SubResource("TileMapPattern_gjjrj")
 
 [sub_resource type="Curve2D" id="Curve2D_po0nb"]
 
-[node name="Background" type="Node2D" unique_id=1758665278]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocmlb"]
+size = Vector2(256, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs12r"]
+size = Vector2(317, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqhku"]
+size = Vector2(60, 379)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpkqv"]
+size = Vector2(251, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1mwp"]
+size = Vector2(60, 318)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1b78"]
+size = Vector2(63.5, 382.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdr3p"]
+size = Vector2(125.75, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwu6c"]
+size = Vector2(63.5, 503.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yymuf"]
+size = Vector2(252, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esggg"]
+size = Vector2(62.75, 195.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nolpu"]
+size = Vector2(257.75, 62.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcj63"]
+size = Vector2(63.5, 257.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_af2a1"]
+size = Vector2(258, 61)
+
+[node name="Level1" type="Node2D" unique_id=1758665278]
+script = ExtResource("1_cpkqv")
+enemy_scene = ExtResource("2_d1mwp")
+
+[node name="Paths" type="Node2D" parent="." unique_id=601449373]
+
+[node name="Path1" type="Path2D" parent="Paths" unique_id=1730484705]
+curve = SubResource("Curve2D_d1mwp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path1" unique_id=1309413233]
+rotates = false
+loop = false
+
+[node name="Path2" type="Path2D" parent="Paths" unique_id=1473481952]
+curve = SubResource("Curve2D_d1mwp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2" unique_id=174613085]
+rotates = false
+loop = false
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1663490921]
 visibility_layer = 2
@@ -805,3 +874,124 @@ position = Vector2(960, 540)
 
 [node name="Player" parent="." unique_id=1150361643 instance=ExtResource("7_d1mwp")]
 position = Vector2(734, 534)
+
+[node name="ShopArea" type="Area2D" parent="." unique_id=420545901 node_paths=PackedStringArray("shop_ui")]
+script = ExtResource("8_rqhku")
+shop_ui = NodePath("../ShopUI")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea" unique_id=1160489492]
+position = Vector2(960, 543)
+shape = SubResource("RectangleShape2D_ocmlb")
+
+[node name="ShopUI" type="CanvasLayer" parent="." unique_id=1157163162]
+script = ExtResource("8_4iphx")
+basic_tower_scene = ExtResource("9_jgkgd")
+
+[node name="Panel" type="Panel" parent="ShopUI" unique_id=580420187]
+offset_left = 929.0
+offset_top = 507.0
+offset_right = 1111.0
+offset_bottom = 748.0
+
+[node name="RamLabel" type="Label" parent="ShopUI/Panel" unique_id=980097720]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 94.0
+offset_bottom = 28.0
+text = "Ram Label"
+
+[node name="TowerList" type="VBoxContainer" parent="ShopUI/Panel" unique_id=1569718953]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 32.0
+offset_right = 124.0
+offset_bottom = 55.0
+
+[node name="TowerPlacementManager" type="Node2D" parent="." unique_id=1740968768 node_paths=PackedStringArray("no_build_zones_parent")]
+script = ExtResource("10_bs12r")
+no_build_zones_parent = NodePath("../NoBuildZone")
+
+[node name="NoBuildZone" type="Node2D" parent="." unique_id=458612029]
+
+[node name="Zone4" type="Area2D" parent="NoBuildZone" unique_id=83378040]
+position = Vector2(-532, 611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone4" unique_id=1989796177]
+position = Vector2(788.5, 28.5)
+shape = SubResource("RectangleShape2D_bs12r")
+
+[node name="Zone1" type="Area2D" parent="NoBuildZone" unique_id=1409977686]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone1" unique_id=13214383]
+position = Vector2(701, 159.5)
+shape = SubResource("RectangleShape2D_rqhku")
+
+[node name="Zone2" type="Area2D" parent="NoBuildZone" unique_id=86362700]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone2" unique_id=397242687]
+position = Vector2(541.5, 319.5)
+shape = SubResource("RectangleShape2D_cpkqv")
+
+[node name="Zone3" type="Area2D" parent="NoBuildZone" unique_id=1730497412]
+position = Vector2(-254, 380)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone3" unique_id=920541188]
+position = Vector2(701, 129)
+shape = SubResource("RectangleShape2D_d1mwp")
+
+[node name="Zone5" type="Area2D" parent="NoBuildZone" unique_id=490755703]
+position = Vector2(-532, 611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone5" unique_id=1716178264]
+position = Vector2(660.25, 249.75)
+shape = SubResource("RectangleShape2D_u1b78")
+
+[node name="Zone6" type="Area2D" parent="NoBuildZone" unique_id=583107954]
+position = Vector2(-532, 611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone6" unique_id=124257578]
+position = Vector2(563.125, 412)
+shape = SubResource("RectangleShape2D_bdr3p")
+
+[node name="Zone7" type="Area2D" parent="NoBuildZone" unique_id=1166981716]
+position = Vector2(-532, 611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone7" unique_id=1512557107]
+position = Vector2(1681, 284.375)
+shape = SubResource("RectangleShape2D_wwu6c")
+
+[node name="Zone8" type="Area2D" parent="NoBuildZone" unique_id=1697359524]
+position = Vector2(-532, 611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone8" unique_id=738195047]
+position = Vector2(1842, 60.5)
+shape = SubResource("RectangleShape2D_yymuf")
+
+[node name="Zone9" type="Area2D" parent="NoBuildZone" unique_id=664305096]
+position = Vector2(-532, 611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone9" unique_id=2023401560]
+position = Vector2(1938.375, -67.375)
+shape = SubResource("RectangleShape2D_esggg")
+
+[node name="Zone10" type="Area2D" parent="NoBuildZone" unique_id=2141267848]
+position = Vector2(-532, 611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone10" unique_id=1409388172]
+position = Vector2(2098.125, -133.125)
+shape = SubResource("RectangleShape2D_nolpu")
+
+[node name="Zone11" type="Area2D" parent="NoBuildZone" unique_id=485804306]
+position = Vector2(-532, 611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone11" unique_id=1887583895]
+position = Vector2(2194, -291.625)
+shape = SubResource("RectangleShape2D_mcj63")
+
+[node name="Zone12" type="Area2D" parent="NoBuildZone" unique_id=270759728]
+position = Vector2(-532, 611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone12" unique_id=146603454]
+position = Vector2(2355, -387.5)
+shape = SubResource("RectangleShape2D_af2a1")

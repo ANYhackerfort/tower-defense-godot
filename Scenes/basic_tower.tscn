@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://0wskd8gfwk2v"]
+
+[ext_resource type="Script" uid="uid://t26jelens3m0" path="res://Scenes/basic_tower.gd" id="1_kk8su"]
+[ext_resource type="Texture2D" uid="uid://d2bpaabpk6mfr" path="res://Assets/icon.svg" id="2_1nlc2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dufid"]
+size = Vector2(127, 129)
+
+[node name="BasicTower" type="Node2D" unique_id=1073758824]
+script = ExtResource("1_kk8su")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=118005063]
+texture = ExtResource("2_1nlc2")
+
+[node name="Range" type="Area2D" parent="." unique_id=309665287]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=682630200]
+position = Vector2(1.5, -1.5)
+shape = SubResource("RectangleShape2D_dufid")
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1133388750]
+
+[node name="PlacementBox" type="Polygon2D" parent="." unique_id=494296222]
