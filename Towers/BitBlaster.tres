@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://cnit84jw8rhg6"]
 
 [ext_resource type="Script" uid="uid://bkubta0nbgtda" path="res://Towers/Towers.gd" id="1_0pygv"]
-[ext_resource type="PackedScene" uid="uid://0wskd8gfwk2v" path="res://Scenes/basic_tower.tscn" id="1_lrkke"]
+[ext_resource type="PackedScene" uid="uid://0wskd8gfwk2v" path="res://Scenes/BitBlasterTower.tscn" id="1_lrkke"]
 
 [resource]
 script = ExtResource("1_0pygv")

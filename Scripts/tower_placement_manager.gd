@@ -9,11 +9,11 @@ var can_place: bool = true
 var placement_size := Vector2(128, 128)
 var place_distance: float = 96.0
 
-func _ready() -> void:
-	pass
 func _process(_delta: float) -> void:
 	if GlobalGameState.selected_tower_scene == null:
 		clear_ghost()
+		if Input.is_action_just_pressed("interact"):
+			handle_tower_pickup()
 		return
 	
 	if ghost_tower == null:
@@ -31,17 +31,42 @@ func _process(_delta: float) -> void:
 		place_tower(place_pos)
 
 func get_place_position() -> Vector2:
-	# Using the cached player reference safely
 	var dir: Vector2 = player.last_dir
 	return player.global_position + dir.normalized() * place_distance
 
 func create_ghost() -> void:
 	ghost_tower = GlobalGameState.selected_tower_scene.instantiate()
-
-	if ghost_tower.has_method("set_as_ghost"):
-		ghost_tower.set_as_ghost(true)
-
+	
+	if "is_ghost" in ghost_tower:
+		ghost_tower.is_ghost = true
+	
 	add_child(ghost_tower)
+
+func handle_tower_pickup() -> void:
+	var pickup_nodes := get_tree().get_nodes_in_group("player_can_pickup")
+	if pickup_nodes.is_empty():
+		return
+	
+	var closest_tower: Node2D = null
+	var min_dist: float = INF
+	
+	for tower in pickup_nodes:
+		var dist := global_position.distance_to(tower.global_position)
+		if dist < min_dist:
+			min_dist = dist
+			closest_tower = tower as Node2D
+			
+	if closest_tower == null:
+		return
+
+	GlobalGameState.selected_tower_scene = closest_tower.source_scene
+	GlobalGameState.selected_tower_cost = closest_tower.cost
+	
+	closest_tower.remove_from_group("placed_towers")
+	closest_tower.remove_from_group("player_can_pickup")
+	
+	closest_tower.queue_free()
+	print("Picked up tower: ", closest_tower.name)
 
 func check_can_place(pos: Vector2) -> bool:
 	var ghost_rect := Rect2(

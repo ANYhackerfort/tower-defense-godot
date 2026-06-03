@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var max_health: int = 100
-@export var speed: float = 80.0
+@export var max_health: int = 2
+@export var speed: float = 100
 @export var reward_ram: int = 10
 @export var damage_to_base: int = 1
 

@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://bq7kjrmovio76"]
 
-[ext_resource type="Script" uid="uid://bhjbs5im5xe5k" path="res://Scripts/enemy_base.gd" id="1_r040p"]
-[ext_resource type="Texture2D" uid="uid://ct67jp7kdy277" path="res://Assets/enemies/Robot Warfare Asset Pack 22-11-24/Robots/Spider.png" id="2_cs1oe"]
+[ext_resource type="Script" uid="uid://bhjbs5im5xe5k" path="res://Scripts/enemy_base.gd" id="1_d4oix"]
+[ext_resource type="Texture2D" uid="uid://ct67jp7kdy277" path="res://Assets/enemies/Robot Warfare Asset Pack 22-11-24/Robots/Spider.png" id="2_q7wxc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jd0l4"]
-atlas = ExtResource("2_cs1oe")
+atlas = ExtResource("2_q7wxc")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x6wkx"]
-atlas = ExtResource("2_cs1oe")
+atlas = ExtResource("2_q7wxc")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bddga"]
-atlas = ExtResource("2_cs1oe")
+atlas = ExtResource("2_q7wxc")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukcf2"]
-atlas = ExtResource("2_cs1oe")
+atlas = ExtResource("2_q7wxc")
 region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cs1oe"]
@@ -42,9 +42,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs1oe"]
 size = Vector2(35, 31)
 
-[node name="EnemyBase" type="Node2D" unique_id=1951759505]
-script = ExtResource("1_r040p")
-speed = 500.0
+[node name="BasicCrawler" type="Node2D" unique_id=1951759505]
+script = ExtResource("1_d4oix")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=177153121]
 scale = Vector2(2.125, 1.9375)
@@ -52,7 +51,9 @@ sprite_frames = SubResource("SpriteFrames_cs1oe")
 animation = &"moving"
 frame_progress = 0.47024015
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1291363364]
+[node name="Hitbox" type="Area2D" parent="." unique_id=1291363364]
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=381189658]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=381189658]
 shape = SubResource("RectangleShape2D_cs1oe")
