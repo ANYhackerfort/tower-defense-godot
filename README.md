@@ -1,11 +1,11 @@
 # Need to Do
 - [X] Basic Level 
 - [X] Moveable Character
-- [ ] Basic Tower/Towers (Need Assets for these)
-- [ ] Player Interaction
-- [ ] Basic Enemy(Virus Need to Find an Asset)
-- [ ] Basic UI(Gold(RAM), Wave Number, Lives(Data/Bytes) Remaining)
-- [ ] Winning/Losing Round
+- [X] Basic Tower/Towers (Need Assets for these)
+- [X] Player Interaction
+- [X] Basic Enemy(Virus Need to Find an Asset)
+- [X] Basic UI(Gold(RAM), Wave Number, Lives(Data/Bytes) Remaining)
+- [X] Winning/Losing Round
 
 # AI Use
 Prompting for syntax and some basic boilerplate
