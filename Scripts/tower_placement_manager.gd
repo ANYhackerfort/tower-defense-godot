@@ -12,7 +12,7 @@ var place_distance: float = 96.0
 func _process(_delta: float) -> void:
 	if GlobalGameState.selected_tower_scene == null:
 		clear_ghost()
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("place"):
 			handle_tower_pickup()
 		return
 	
