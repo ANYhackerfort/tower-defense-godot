@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bq7kjrmovio76"]
 
-[ext_resource type="Script" uid="uid://bhjbs5im5xe5k" path="res://enemy_base.gd" id="1_r040p"]
+[ext_resource type="Script" uid="uid://bhjbs5im5xe5k" path="res://Scripts/enemy_base.gd" id="1_r040p"]
 [ext_resource type="Texture2D" uid="uid://ct67jp7kdy277" path="res://Assets/enemies/Robot Warfare Asset Pack 22-11-24/Robots/Spider.png" id="2_cs1oe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jd0l4"]
@@ -44,9 +44,9 @@ size = Vector2(35, 31)
 
 [node name="EnemyBase" type="Node2D" unique_id=1951759505]
 script = ExtResource("1_r040p")
+speed = 500.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=177153121]
-z_index = 100
 scale = Vector2(2.125, 1.9375)
 sprite_frames = SubResource("SpriteFrames_cs1oe")
 animation = &"moving"

@@ -16,8 +16,18 @@ func _ready() -> void:
 	animated_sprite.play("moving")
 	last_global_position = global_position
 
+func _process(delta: float) -> void:
+	var parent := get_parent()
+	
+	if parent is PathFollow2D:
+		parent.progress += speed * delta
+		
+		# Check if malware breached the end of the path
+		if parent.progress_ratio >= 1.0:
+			reach_end()
+			return # Exit early since this node is being freed
 
-func _process(_delta: float) -> void:
+	# 2. Handle Sprite Flipping (Preserved from your original script)
 	var direction := global_position - last_global_position
 	if abs(direction.x) > 0.1:
 		if direction.x < 0:
@@ -33,12 +43,18 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		die()
 
-
 func die() -> void:
 	GlobalGameState.add_ram(reward_ram)
-	queue_free()
-
+	_safely_free()
 
 func reach_end() -> void:
 	GlobalGameState.take_base_damage(damage_to_base)
-	queue_free()
+	_safely_free()
+
+# Helper function to prevent empty PathFollow2D nodes from cluttering the hierarchy
+func _safely_free() -> void:
+	var parent := get_parent()
+	if parent is PathFollow2D:
+		parent.queue_free()
+	else:
+		queue_free()

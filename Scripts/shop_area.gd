@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var shop_ui: CanvasLayer
+@export var shop_ui: Panel
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)

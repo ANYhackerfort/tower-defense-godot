@@ -758,8 +758,6 @@ pattern_1 = SubResource("TileMapPattern_gjjrj")
 
 [node name="TowerSpawnInteractor" type="Node2D" unique_id=102557712]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=508232193]
-
 [node name="SpawnArea" type="TileMapLayer" parent="." unique_id=1378954263]
 visibility_layer = 2
 scale = Vector2(2, 2)
