@@ -48,3 +48,11 @@ func reset_game() -> void:
 	
 	get_tree().paused = false 
 	get_tree().reload_current_scene()
+
+func next_level() -> void:
+	data = 10
+	ram = 100
+	selected_tower_scene = null
+	selected_tower_cost = 0
+	
+	get_tree().paused = false 

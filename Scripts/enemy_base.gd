@@ -22,12 +22,10 @@ func _process(delta: float) -> void:
 	if parent is PathFollow2D:
 		parent.progress += speed * delta
 		
-		# Check if malware breached the end of the path
 		if parent.progress_ratio >= 1.0:
 			reach_end()
-			return # Exit early since this node is being freed
+			return 
 
-	# 2. Handle Sprite Flipping (Preserved from your original script)
 	var direction := global_position - last_global_position
 	if abs(direction.x) > 0.1:
 		if direction.x < 0:
@@ -51,7 +49,6 @@ func reach_end() -> void:
 	GlobalGameState.take_base_damage(damage_to_base)
 	_safely_free()
 
-# Helper function to prevent empty PathFollow2D nodes from cluttering the hierarchy
 func _safely_free() -> void:
 	var parent := get_parent()
 	if parent is PathFollow2D:

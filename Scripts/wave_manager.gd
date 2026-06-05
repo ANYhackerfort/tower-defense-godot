@@ -44,8 +44,7 @@ func start_wave() -> void:
 	var wave := tutorial_waves[current_wave_index]
 	is_spawning_wave = true
 	
-	if wave_label:
-		wave_label.text = "Wave: " + str(current_wave_index + 1) + "/" + str(tutorial_waves.size())
+	wave_label.text = "Wave: " + str(current_wave_index + 1) + "/" + str(tutorial_waves.size())
 	
 	print("Starting: ", wave.wave_name)
 

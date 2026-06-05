@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://bkubta0nbgtda" path="res://Towers/Towers.gd" id="13_u1b78"]
 [ext_resource type="Resource" uid="uid://cnit84jw8rhg6" path="res://Towers/BitBlaster.tres" id="14_bdr3p"]
 [ext_resource type="Script" uid="uid://di6jy83p8ibma" path="res://Scripts/lose_screen.gd" id="19_nolpu"]
+[ext_resource type="PackedScene" uid="uid://cti4fbqcqhoiv" path="res://Scenes/level2.tscn" id="20_af2a1"]
 [ext_resource type="Script" uid="uid://b824gueiaqdqn" path="res://Scripts/win_screen.gd" id="20_mcj63"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_bpugw"]
@@ -976,6 +977,7 @@ text = "Quit"
 process_mode = 3
 visible = false
 script = ExtResource("20_mcj63")
+next_level = ExtResource("20_af2a1")
 
 [node name="GameOverLabel" type="Label" parent="WinScreen" unique_id=1674005586]
 offset_left = 485.0
@@ -1087,4 +1089,5 @@ curve = SubResource("Curve2D_esggg")
 
 [connection signal="pressed" from="LoseScreen/RestartButton" to="LoseScreen" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="LoseScreen/Quit" to="LoseScreen" method="_on_quit_pressed"]
+[connection signal="pressed" from="WinScreen/ContinueButton" to="WinScreen" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="WinScreen/Quit" to="WinScreen" method="_on_quit_pressed"]
