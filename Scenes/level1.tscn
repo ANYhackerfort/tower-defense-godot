@@ -867,7 +867,7 @@ script = ExtResource("9_bdr3p")
 tutorial_waves = Array[ExtResource("10_nolpu")]([ExtResource("11_mcj63"), ExtResource("12_af2a1"), ExtResource("13_ocmlb")])
 paths = [NodePath("../Paths/EnemyPath1"), NodePath("../Paths/EnemyPath2")]
 wave_label = NodePath("../GameUI/WaveLabel")
-time_between_waves = 5.0
+time_between_waves = 10.0
 
 [node name="TowerSpawnInteractor" parent="." unique_id=102557712 instance=ExtResource("6_cpkqv")]
 position = Vector2(960, 540)

@@ -10,14 +10,16 @@
 [ext_resource type="Script" uid="uid://bjrumk3cxx2bi" path="res://Scripts/shop_ui.gd" id="8_4iphx"]
 [ext_resource type="Script" uid="uid://dc1q7n74f3rgi" path="res://Scripts/shop_area.gd" id="8_rqhku"]
 [ext_resource type="Script" uid="uid://dtts6s7xjwjch" path="res://Scripts/wave_manager.gd" id="9_bdr3p"]
+[ext_resource type="Resource" uid="uid://dhycb0mw2wk5f" path="res://Waves/Level2Wave1.tres" id="9_mu7lp"]
+[ext_resource type="Resource" uid="uid://bg7whqopu8v7m" path="res://Waves/Level2Wave2.tres" id="10_5qi50"]
 [ext_resource type="Script" uid="uid://d13nde088d4im" path="res://Scripts/tower_placement_manager.gd" id="10_bs12r"]
 [ext_resource type="Script" uid="uid://cgqiu0jiofupp" path="res://Waves/WaveData.gd" id="10_nolpu"]
-[ext_resource type="Resource" uid="uid://32g5j6lw8ey1" path="res://Waves/Level1Wave1.tres" id="11_mcj63"]
-[ext_resource type="Resource" uid="uid://d324vp74sblxm" path="res://Waves/Level1Wave2.tres" id="12_af2a1"]
-[ext_resource type="Resource" uid="uid://ckg0vn6qbyh0p" path="res://Waves/Level1Wave3.tres" id="13_ocmlb"]
+[ext_resource type="Resource" uid="uid://dax040sy55850" path="res://Waves/Level2Wave3.tres" id="11_1apgh"]
 [ext_resource type="Script" uid="uid://bkubta0nbgtda" path="res://Towers/Towers.gd" id="13_u1b78"]
 [ext_resource type="Resource" uid="uid://cnit84jw8rhg6" path="res://Towers/BitBlaster.tres" id="14_bdr3p"]
+[ext_resource type="Resource" uid="uid://dbb5abwuorc31" path="res://Towers/DDoSPulsar.tres" id="18_mu7lp"]
 [ext_resource type="Script" uid="uid://di6jy83p8ibma" path="res://Scripts/lose_screen.gd" id="19_nolpu"]
+[ext_resource type="PackedScene" uid="uid://xlegnwhiie5k" path="res://Scenes/level_3.tscn" id="20_in4v8"]
 [ext_resource type="Script" uid="uid://b824gueiaqdqn" path="res://Scripts/win_screen.gd" id="20_mcj63"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_bpugw"]
@@ -876,10 +878,10 @@ no_build_zones_parent = NodePath("../NoBuildZone")
 
 [node name="WaveManager" type="Node2D" parent="." unique_id=635351749 node_paths=PackedStringArray("paths", "wave_label")]
 script = ExtResource("9_bdr3p")
-tutorial_waves = Array[ExtResource("10_nolpu")]([ExtResource("11_mcj63"), ExtResource("12_af2a1"), ExtResource("13_ocmlb")])
+tutorial_waves = Array[ExtResource("10_nolpu")]([ExtResource("9_mu7lp"), ExtResource("10_5qi50"), ExtResource("11_1apgh")])
 paths = [NodePath("../Paths/EnemyPath1"), NodePath("../Paths/EnemyPath2"), NodePath("../Paths/EnemyPath3")]
 wave_label = NodePath("../GameUI/WaveLabel")
-time_between_waves = 5.0
+time_between_waves = 10.0
 
 [node name="TowerSpawnInteractor" parent="." unique_id=102557712 instance=ExtResource("6_cpkqv")]
 position = Vector2(567, 511)
@@ -898,7 +900,7 @@ shape = SubResource("RectangleShape2D_ocmlb")
 
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=1157163162]
 script = ExtResource("8_4iphx")
-towers = Array[ExtResource("13_u1b78")]([ExtResource("14_bdr3p")])
+towers = Array[ExtResource("13_u1b78")]([ExtResource("14_bdr3p"), ExtResource("18_mu7lp")])
 
 [node name="RamLabel" type="Label" parent="GameUI" unique_id=980097720]
 offset_left = 182.0
@@ -989,6 +991,7 @@ text = "Quit"
 process_mode = 3
 visible = false
 script = ExtResource("20_mcj63")
+next_level = ExtResource("20_in4v8")
 
 [node name="GameOverLabel" type="Label" parent="WinScreen" unique_id=1674005586]
 offset_left = 485.0
@@ -1017,6 +1020,7 @@ theme_override_font_sizes/font_size = 100
 text = "Quit"
 
 [node name="NoBuildZone" type="Node2D" parent="." unique_id=458612029]
+visible = false
 
 [node name="Zone4" type="Area2D" parent="NoBuildZone" unique_id=83378040]
 
@@ -1115,4 +1119,5 @@ curve = SubResource("Curve2D_051s1")
 
 [connection signal="pressed" from="LoseScreen/RestartButton" to="LoseScreen" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="LoseScreen/Quit" to="LoseScreen" method="_on_quit_pressed"]
+[connection signal="pressed" from="WinScreen/ContinueButton" to="WinScreen" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="WinScreen/Quit" to="WinScreen" method="_on_quit_pressed"]

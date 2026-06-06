@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://dax040sy55850"]
+
+[ext_resource type="Script" uid="uid://cgqiu0jiofupp" path="res://Waves/WaveData.gd" id="1_ycr16"]
+[ext_resource type="Script" uid="uid://bpo2467d56vwk" path="res://Waves/EnemySpawnInfo.gd" id="2_i04ns"]
+[ext_resource type="PackedScene" uid="uid://dh1infhtxov73" path="res://Scenes/SpeedyHornet.tscn" id="3_i04ns"]
+[ext_resource type="PackedScene" uid="uid://bq7kjrmovio76" path="res://Scenes/BasicCrawler.tscn" id="4_uu7l7"]
+
+[sub_resource type="Resource" id="Resource_ycr16"]
+script = ExtResource("2_i04ns")
+enemy_scene = ExtResource("3_i04ns")
+initial_delay = 3.0
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[sub_resource type="Resource" id="Resource_i04ns"]
+script = ExtResource("2_i04ns")
+enemy_scene = ExtResource("4_uu7l7")
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[sub_resource type="Resource" id="Resource_uu7l7"]
+script = ExtResource("2_i04ns")
+enemy_scene = ExtResource("3_i04ns")
+path_index = 1
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[sub_resource type="Resource" id="Resource_mk16s"]
+script = ExtResource("2_i04ns")
+enemy_scene = ExtResource("4_uu7l7")
+initial_delay = 3.0
+path_index = 1
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[resource]
+script = ExtResource("1_ycr16")
+wave_name = "Wave 3"
+spawns = Array[ExtResource("2_i04ns")]([SubResource("Resource_ycr16"), SubResource("Resource_i04ns"), SubResource("Resource_uu7l7"), SubResource("Resource_mk16s")])
+reward_ram = 10
+metadata/_custom_type_script = "uid://cgqiu0jiofupp"

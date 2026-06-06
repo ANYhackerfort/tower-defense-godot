@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://dbb5abwuorc31"]
+
+[ext_resource type="PackedScene" uid="uid://62hyimva74m0" path="res://Scenes/DDoSPulsarTower.tscn" id="1_up5ap"]
+[ext_resource type="Script" uid="uid://bkubta0nbgtda" path="res://Towers/Towers.gd" id="2_w31u2"]
+
+[resource]
+script = ExtResource("2_w31u2")
+scene = ExtResource("1_up5ap")
+metadata/_custom_type_script = "uid://bkubta0nbgtda"

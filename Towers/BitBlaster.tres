@@ -5,5 +5,7 @@
 
 [resource]
 script = ExtResource("1_0pygv")
+name = "Bit Blaster"
+cost = 50
 scene = ExtResource("1_lrkke")
 metadata/_custom_type_script = "uid://bkubta0nbgtda"

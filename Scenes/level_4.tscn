@@ -796,38 +796,17 @@ size = Vector2(566.25, 62)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1b78"]
 size = Vector2(63.5, 695.125)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwu6c"]
-size = Vector2(63.5, 289)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yymuf"]
-size = Vector2(61, 258.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esggg"]
 size = Vector2(775.375, 379.3125)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_051s1"]
-size = Vector2(477, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu7lp"]
 size = Vector2(1410.6875, 61)
 
 [sub_resource type="Curve2D" id="Curve2D_d1mwp"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1932, 286, 0, 0, 0, 0, 1696, 294, 0, 0, 0, 0, 1691, 67, 0, 0, 0, 0, 1117, 69, 0, 0, 0, 0, 1123, 519, 0, 0, 0, 0, 741, 518, 0, 0, 0, 0, 735, 259, 0, 0, 0, 0, 387, 257, 0, 0, 0, 0, 389, 517, 0, 0, 0, 0, -70, 517)
-}
-point_count = 10
 
 [sub_resource type="Curve2D" id="Curve2D_esggg"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1942, 805, 0, 0, 0, 0, 1699, 800, 0, 0, 0, 0, 1701, 1032, 0, 0, 0, 0, 1121, 1025, 0, 0, 0, 0, 1121, 518, 0, 0, 0, 0, 745, 516, 0, 0, 0, 0, 741, 808, 0, 0, 0, 0, 384, 809, 0, 0, 0, 0, 386, 516, 0, 0, 0, 0, -74, 522)
-}
-point_count = 10
 
 [sub_resource type="Curve2D" id="Curve2D_051s1"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1934, 519, 0, 0, 0, 0, 736, 519, 0, 0, 0, 0, 739, 245, 0, 0, 0, 0, 383, 253, 0, 0, 0, 0, 373, 804, 0, 0, 0, 0, 737, 805, 0, 0, 0, 0, 735, 248, 0, 0, 0, 0, 382, 251, 0, 0, 0, 0, 379, 517, 0, 0, 0, 0, -70, 514)
-}
-point_count = 10
 
 [node name="Level4" type="Node2D" unique_id=1758665278]
 
@@ -1035,29 +1014,11 @@ shape = SubResource("RectangleShape2D_d1mwp")
 position = Vector2(511, 701.4375)
 shape = SubResource("RectangleShape2D_u1b78")
 
-[node name="Zone7" type="Area2D" parent="NoBuildZone" unique_id=1166981716]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone7" unique_id=1512557107]
-position = Vector2(2001, 142)
-shape = SubResource("RectangleShape2D_wwu6c")
-
-[node name="Zone8" type="Area2D" parent="NoBuildZone" unique_id=1697359524]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone8" unique_id=738195047]
-position = Vector2(2093, 137)
-shape = SubResource("RectangleShape2D_yymuf")
-
 [node name="Zone9" type="Area2D" parent="NoBuildZone" unique_id=664305096]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone9" unique_id=2023401560]
 position = Vector2(926.6875, 603)
 shape = SubResource("RectangleShape2D_esggg")
-
-[node name="Zone13" type="Area2D" parent="NoBuildZone" unique_id=1670778062]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NoBuildZone/Zone13" unique_id=152807309]
-position = Vector2(2210, 345)
-shape = SubResource("RectangleShape2D_051s1")
 
 [node name="Zone15" type="Area2D" parent="NoBuildZone" unique_id=1954307273]
 
@@ -1066,7 +1027,6 @@ position = Vector2(1250.6563, 799)
 shape = SubResource("RectangleShape2D_mu7lp")
 
 [node name="Paths" type="Node2D" parent="." unique_id=601449373]
-visible = false
 
 [node name="EnemyPath1" type="Path2D" parent="Paths" unique_id=1730484705]
 curve = SubResource("Curve2D_d1mwp")

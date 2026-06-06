@@ -1,18 +1,17 @@
-[gd_scene format=4 uid="uid://0wskd8gfwk2v"]
+[gd_scene format=4 uid="uid://djjvcwpxnroeg"]
 
-[ext_resource type="Script" uid="uid://t26jelens3m0" path="res://Scripts/basic_tower.gd" id="1_lnhb5"]
-[ext_resource type="PackedScene" uid="uid://cvmmprb5i16kn" path="res://Scenes/bit_blaster_bullet.tscn" id="2_e1icy"]
-[ext_resource type="Texture2D" uid="uid://dtnj6dujqh1u2" path="res://Assets/background_tiles/neo_zero_buildings_02.png" id="3_p1eks"]
-[ext_resource type="Texture2D" uid="uid://ccrw1u6bjq72k" path="res://Assets/background_tiles/neo_zero_props_02_free.png" id="4_hmxfc"]
-[ext_resource type="Texture2D" uid="uid://inok31hbbp7d" path="res://Assets/background_tiles/neo_zero_props_and_items_01.png" id="5_u7dii"]
-[ext_resource type="Texture2D" uid="uid://we1akyobdgdw" path="res://Assets/background_tiles/neo_zero_tileset_02.png" id="6_rabi8"]
-[ext_resource type="Texture2D" uid="uid://dqlsix2tefwj8" path="res://Assets/background_tiles/neo_zero_tiles_and_buildings_01.png" id="7_86dw7"]
+[ext_resource type="Script" uid="uid://de3lm4tbbdy0p" path="res://Scenes/firewall_tower.gd" id="1_f7b7h"]
+[ext_resource type="Texture2D" uid="uid://dtnj6dujqh1u2" path="res://Assets/background_tiles/neo_zero_buildings_02.png" id="1_rfkvr"]
+[ext_resource type="Texture2D" uid="uid://ccrw1u6bjq72k" path="res://Assets/background_tiles/neo_zero_props_02_free.png" id="2_f7b7h"]
+[ext_resource type="Texture2D" uid="uid://inok31hbbp7d" path="res://Assets/background_tiles/neo_zero_props_and_items_01.png" id="3_w2iyq"]
+[ext_resource type="Texture2D" uid="uid://we1akyobdgdw" path="res://Assets/background_tiles/neo_zero_tileset_02.png" id="4_rpwk5"]
+[ext_resource type="Texture2D" uid="uid://dqlsix2tefwj8" path="res://Assets/background_tiles/neo_zero_tiles_and_buildings_01.png" id="5_iwdmk"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_o5joy"]
 tile_data = PackedInt32Array(131072, 655365, 6, 196608, 655365, 7, 65537, 655365, 6, 131073, 655365, 7, 196609, 720901, 7, 2, 655365, 6, 65538, 655365, 7, 131074, 196613, 5, 196610, 196613, 5, 3, 655365, 7, 65539, 196613, 5, 131075, 196613, 5, 196611, 196613, 5, 4, 851973, 7, 65540, 196613, 5, 131076, 196613, 5, 196612, 196613, 5, 5, 851973, 6, 65541, 851973, 7, 131077, 196613, 5, 196613, 196613, 5, 65542, 851973, 6, 131078, 851973, 7, 196614, 786437, 7, 131079, 851973, 6, 196615, 851973, 7)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqh5t"]
-texture = ExtResource("3_p1eks")
+texture = ExtResource("1_rfkvr")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -162,7 +161,7 @@ texture = ExtResource("3_p1eks")
 20:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmvtk"]
-texture = ExtResource("4_hmxfc")
+texture = ExtResource("2_f7b7h")
 10:0/0 = 0
 11:0/0 = 0
 1:1/0 = 0
@@ -220,7 +219,7 @@ texture = ExtResource("4_hmxfc")
 11:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o1uk4"]
-texture = ExtResource("5_u7dii")
+texture = ExtResource("3_w2iyq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -284,7 +283,7 @@ texture = ExtResource("5_u7dii")
 9:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nnlh4"]
-texture = ExtResource("6_rabi8")
+texture = ExtResource("4_rpwk5")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -406,7 +405,7 @@ texture = ExtResource("6_rabi8")
 17:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aw33m"]
-texture = ExtResource("7_86dw7")
+texture = ExtResource("5_iwdmk")
 3:1/0 = 0
 4:1/0 = 0
 5:1/0 = 0
@@ -586,14 +585,12 @@ pattern_0 = SubResource("TileMapPattern_o5joy")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dufid"]
 size = Vector2(127, 129)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o5joy"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gkyfa"]
 resource_local_to_scene = true
-radius = 250.0
+radius = 135.0
 
-[node name="BitBlaster" type="Node2D" unique_id=1073758824]
-script = ExtResource("1_lnhb5")
-projectile_scene = ExtResource("2_e1icy")
-damage = 2
+[node name="Firewall" type="Node2D" unique_id=1073758824]
+script = ExtResource("1_f7b7h")
 
 [node name="TowerTexture" type="TileMapLayer" parent="." unique_id=462451982]
 tile_map_data = PackedByteArray("AAD8/wIABQAKAAYAAAD8/wMABQAKAAcAAAD9/wEABQAKAAYAAAD9/wIABQAKAAcAAAD9/wMAAAATAAQAAAD+/wAABQAKAAYAAAD+/wEABQAKAAcAAAD+/wIAAAASAAMAAAD+/wMAAAASAAQAAAD//wAABQAKAAcAAAD//wEAAAATAAQAAAD//wIAAAATAAMAAAD//wMAAAATAAQAAAAAAAAABQANAAcAAAAAAAEAAAATAAQAAAAAAAIAAAAUAAMAAAAAAAMAAAAUAAQAAAABAAAABQANAAYAAAABAAEABQANAAcAAAABAAIAAAATAAQAAAABAAMAAAATAAQAAAACAAEABQANAAYAAAACAAIABQANAAcAAAACAAMAAAATAAQAAAADAAIABQANAAYAAAADAAMABQANAAcAAAABAP7/BQANAAcAACABAP//BQANAAYAACAAAP3/AAAKAAMAACAAAP7/AAATAAQAAAAAAP//BQANAAcAACD///3/AAAKAAMAACD///7/AAATAAQAAAD/////BQAKAAcAACD+//7/BQAKAAcAACD+////BQAKAAYAACABAP3/AAAIAAAAAAD+//3/AAAGAAAAAAD///z/AAAKAAMAAAAAAPz/AAAKAAMAAAA=")
@@ -602,6 +599,7 @@ tile_set = SubResource("TileSet_hiob8")
 [node name="PlacementBox" type="Polygon2D" parent="." unique_id=1415323950]
 
 [node name="ShootTimer" type="Timer" parent="." unique_id=1133388750]
+wait_time = 0.1
 
 [node name="PickupRange" type="Area2D" parent="." unique_id=309665287]
 
@@ -609,11 +607,12 @@ tile_set = SubResource("TileSet_hiob8")
 shape = SubResource("RectangleShape2D_dufid")
 
 [node name="AttackRange" type="Area2D" parent="." unique_id=539385255]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" unique_id=864370021]
-shape = SubResource("CircleShape2D_o5joy")
+shape = SubResource("CircleShape2D_gkyfa")
 
-[node name="AttackSpawn" type="Node2D" parent="." unique_id=364334182]
-position = Vector2(0, -50)
+[node name="AttackSpawn" type="Node2D" parent="." unique_id=1611310216]
+position = Vector2(0, -49)

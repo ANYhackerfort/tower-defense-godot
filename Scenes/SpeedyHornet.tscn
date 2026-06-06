@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://dh1infhtxov73"]
+
+[ext_resource type="Script" uid="uid://bhjbs5im5xe5k" path="res://Scripts/crawler.gd" id="1_p5n1e"]
+[ext_resource type="Texture2D" uid="uid://d1c5tmod1honi" path="res://Assets/enemies/Robot Warfare Asset Pack 22-11-24/Robots/Wasp.png" id="2_04ggs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dgp8"]
+atlas = ExtResource("2_04ggs")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0fs0"]
+atlas = ExtResource("2_04ggs")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jmwp"]
+atlas = ExtResource("2_04ggs")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il8ty"]
+atlas = ExtResource("2_04ggs")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcgds"]
+atlas = ExtResource("2_04ggs")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pku2q"]
+atlas = ExtResource("2_04ggs")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8a5h"]
+atlas = ExtResource("2_04ggs")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i7um"]
+atlas = ExtResource("2_04ggs")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76bxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dgp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0fs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jmwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il8ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcgds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pku2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8a5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i7um")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs1oe"]
+size = Vector2(30.666668, 24.25)
+
+[node name="SpeedyHornet" type="Node2D" unique_id=1951759505]
+script = ExtResource("1_p5n1e")
+max_health = 3
+speed = 300.0
+reward_ram = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=177153121]
+scale = Vector2(2.125, 1.9375)
+sprite_frames = SubResource("SpriteFrames_76bxn")
+animation = &"moving"
+frame_progress = 0.1256701
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1291363364]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=381189658]
+position = Vector2(0, -4.125)
+shape = SubResource("RectangleShape2D_cs1oe")

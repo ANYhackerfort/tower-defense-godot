@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 			return 
 
 	var direction := global_position - last_global_position
-	if abs(direction.x) > 0.1:
+	if abs(direction.x) > 0.05:
 		if direction.x < 0:
 			animated_sprite.flip_h = true
 		else:

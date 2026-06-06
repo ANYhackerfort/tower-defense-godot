@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bq7kjrmovio76"]
 
-[ext_resource type="Script" uid="uid://bhjbs5im5xe5k" path="res://Scripts/enemy_base.gd" id="1_d4oix"]
+[ext_resource type="Script" uid="uid://bhjbs5im5xe5k" path="res://Scripts/crawler.gd" id="1_d4oix"]
 [ext_resource type="Texture2D" uid="uid://ct67jp7kdy277" path="res://Assets/enemies/Robot Warfare Asset Pack 22-11-24/Robots/Spider.png" id="2_q7wxc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jd0l4"]
@@ -40,10 +40,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs1oe"]
-size = Vector2(35, 31)
+size = Vector2(34, 30)
 
 [node name="BasicCrawler" type="Node2D" unique_id=1951759505]
 script = ExtResource("1_d4oix")
+max_health = 5
+reward_ram = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=177153121]
 scale = Vector2(2.125, 1.9375)
@@ -56,4 +58,5 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=381189658]
+position = Vector2(9.536743e-07, -1)
 shape = SubResource("RectangleShape2D_cs1oe")

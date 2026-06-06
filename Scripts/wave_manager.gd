@@ -72,6 +72,13 @@ func process_spawn_info(spawn_info: EnemySpawnInfo) -> void:
 
 	var target_path := paths[spawn_info.path_index]
 
+	if spawn_info.initial_delay > 0.0:
+		var tree := get_tree()
+		if tree == null: return
+		
+		await tree.create_timer(spawn_info.initial_delay, false).timeout
+		if not is_inside_tree(): return
+
 	for i in range(spawn_info.count):
 		var path_follow := PathFollow2D.new()
 		path_follow.loop = false
@@ -89,7 +96,6 @@ func process_spawn_info(spawn_info: EnemySpawnInfo) -> void:
 		if tree == null: return
 		
 		await tree.create_timer(spawn_info.spawn_delay, false).timeout
-		
 		if not is_inside_tree(): return
 
 	active_spawn_routines -= 1

@@ -812,22 +812,10 @@ size = Vector2(477, 61)
 size = Vector2(385.375, 61)
 
 [sub_resource type="Curve2D" id="Curve2D_d1mwp"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1932, 286, 0, 0, 0, 0, 1696, 294, 0, 0, 0, 0, 1691, 67, 0, 0, 0, 0, 1117, 69, 0, 0, 0, 0, 1123, 519, 0, 0, 0, 0, 741, 518, 0, 0, 0, 0, 735, 259, 0, 0, 0, 0, 387, 257, 0, 0, 0, 0, 389, 517, 0, 0, 0, 0, -70, 517)
-}
-point_count = 10
 
 [sub_resource type="Curve2D" id="Curve2D_esggg"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1942, 805, 0, 0, 0, 0, 1699, 800, 0, 0, 0, 0, 1701, 1032, 0, 0, 0, 0, 1121, 1025, 0, 0, 0, 0, 1121, 518, 0, 0, 0, 0, 745, 516, 0, 0, 0, 0, 741, 808, 0, 0, 0, 0, 384, 809, 0, 0, 0, 0, 386, 516, 0, 0, 0, 0, -74, 522)
-}
-point_count = 10
 
 [sub_resource type="Curve2D" id="Curve2D_051s1"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1934, 519, 0, 0, 0, 0, 736, 519, 0, 0, 0, 0, 739, 245, 0, 0, 0, 0, 383, 253, 0, 0, 0, 0, 373, 804, 0, 0, 0, 0, 737, 805, 0, 0, 0, 0, 735, 248, 0, 0, 0, 0, 382, 251, 0, 0, 0, 0, 379, 517, 0, 0, 0, 0, -70, 514)
-}
-point_count = 10
 
 [node name="Level3" type="Node2D" unique_id=1758665278]
 
@@ -1066,7 +1054,6 @@ position = Vector2(1758.6875, 768)
 shape = SubResource("RectangleShape2D_mu7lp")
 
 [node name="Paths" type="Node2D" parent="." unique_id=601449373]
-visible = false
 
 [node name="EnemyPath1" type="Path2D" parent="Paths" unique_id=1730484705]
 curve = SubResource("Curve2D_d1mwp")
