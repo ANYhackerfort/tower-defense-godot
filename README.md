@@ -11,7 +11,7 @@
 - [ ] Make Level 3 Work Well
 - [ ] Make Level 4 Work Well
 - [X] Make starting RAM for each level different
-- [ ] Add Sounds
+- [ ] Add Sounds - background music done X
 - [ ] Add Start Screen
 - [ ] Polish UI
 - [ ] Polish Towers
