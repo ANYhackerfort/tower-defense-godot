@@ -12,7 +12,7 @@ metadata/_custom_type_script = "uid://bpo2467d56vwk"
 
 [resource]
 script = ExtResource("1_rngi1")
-wave_name = "Wave 2"
+wave_name = "Wave Other Lane"
 spawns = Array[ExtResource("2_i6akp")]([SubResource("Resource_rngi1")])
 reward_ram = 50
 metadata/_custom_type_script = "uid://cgqiu0jiofupp"

@@ -72,7 +72,7 @@ size = Vector2(30.666668, 24.25)
 
 [node name="SpeedyHornet" type="Node2D" unique_id=1951759505]
 script = ExtResource("1_p5n1e")
-max_health = 3
+max_health = 4
 speed = 300.0
 reward_ram = 5
 

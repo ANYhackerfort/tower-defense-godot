@@ -2,7 +2,6 @@ extends Node2D
 
 var source_scene: PackedScene = load("res://Scenes/BitBlasterTower.tscn")
 @export var projectile_scene: PackedScene
-@export var cost: int = 50
 @export var damage: int = 1
 
 @onready var placement_box: Polygon2D = $PlacementBox
@@ -63,9 +62,6 @@ func _draw() -> void:
 		var line_color := Color(0, 0.6, 1, 0.4)
 		var line_thickness: float = 2.0
 		draw_arc(Vector2.ZERO, radius, 0, TAU, 64, line_color, line_thickness, true)
-
-func get_cost() -> int:
-	return cost
 
 func _on_player_entered_pickup(body: Node2D) -> void:
 	if body.is_in_group("player"):

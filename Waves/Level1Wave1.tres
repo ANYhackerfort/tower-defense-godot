@@ -11,6 +11,7 @@ metadata/_custom_type_script = "uid://bpo2467d56vwk"
 
 [resource]
 script = ExtResource("1_pi4fk")
+wave_name = "Wave Intro"
 spawns = Array[ExtResource("2_bdnhk")]([SubResource("Resource_pi4fk")])
 reward_ram = 80
 metadata/_custom_type_script = "uid://cgqiu0jiofupp"

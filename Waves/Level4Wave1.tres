@@ -10,7 +10,7 @@ script = ExtResource("2_qx37n")
 enemy_scene = ExtResource("3_4iofu")
 count = 9
 initial_delay = 1.0
-spawn_delay = 0.5
+spawn_delay = 1.5
 path_index = 1
 metadata/_custom_type_script = "uid://bpo2467d56vwk"
 
@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://bpo2467d56vwk"
 script = ExtResource("2_qx37n")
 enemy_scene = ExtResource("3_4iofu")
 initial_delay = 9.5
-spawn_delay = 1.3
+spawn_delay = 1.5
 path_index = 3
 metadata/_custom_type_script = "uid://bpo2467d56vwk"
 

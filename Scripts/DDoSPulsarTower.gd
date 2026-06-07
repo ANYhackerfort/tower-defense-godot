@@ -3,7 +3,6 @@ extends Node2D
 var source_scene: PackedScene = load("res://Scenes/DDoSPulsarTower.tscn")
 
 @export var slow_factor: float = 0.3
-@export var cost: int = 60
 @export var damage: int = 1       
 
 @onready var placement_box: Polygon2D = $PlacementBox
@@ -89,11 +88,6 @@ func _draw() -> void:
 		var blast_fill := Color("#FF474C", alpha * 0.2)
 		draw_circle(Vector2.ZERO, current_radius, blast_fill)
 
-func get_cost() -> int:
-	return cost
-
-# --- PICKUP RANGE LOGIC ---
-
 func _on_player_entered_pickup(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		add_to_group("player_can_pickup")
@@ -101,8 +95,6 @@ func _on_player_entered_pickup(body: Node2D) -> void:
 func _on_player_exited_pickup(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		remove_from_group("player_can_pickup")
-
-# --- AREA DETECTION & TRAFFIC THROTTLING ---
 
 func _on_enemy_entered(enemy_hitbox: Area2D) -> void:
 	if enemy_hitbox.owner.is_in_group("enemies"):
@@ -122,8 +114,6 @@ func _on_enemy_exited(enemy_hitbox: Area2D) -> void:
 			enemy.remove_meta(slow_meta_id)
 			enemy.speed /= slow_factor
 
-# --- AOE CLOCK CYCLE PULSE DAMAGE ---
-
 func _on_shoot_timer_timeout() -> void:
 	if targets_in_range.is_empty():
 		return
@@ -133,7 +123,6 @@ func _on_shoot_timer_timeout() -> void:
 func shoot_aoe_pulse() -> void:
 	print("DDoS Pulsar discharging massive packet traffic overflow burst!")
 	
-	# 🟢 Trigger visual shockwave sequence
 	is_pulsing = true
 	pulse_progress = 0.0
 	

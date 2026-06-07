@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://bpo2467d56vwk"
 
 [resource]
 script = ExtResource("1_gcfhs")
-wave_name = "Wave 3"
+wave_name = "Wave Two Lane Action"
 spawns = Array[ExtResource("2_mwrvk")]([SubResource("Resource_1pqre"), SubResource("Resource_recrl")])
 reward_ram = 50
 metadata/_custom_type_script = "uid://cgqiu0jiofupp"

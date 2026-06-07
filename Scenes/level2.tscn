@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cti4fbqcqhoiv"]
 
 [ext_resource type="Texture2D" uid="uid://dqlsix2tefwj8" path="res://Assets/background_tiles/neo_zero_tiles_and_buildings_01.png" id="1_2a60c"]
-[ext_resource type="Script" uid="uid://rlq2wi7df1wl" path="res://Scenes/level_2.gd" id="1_5qi50"]
+[ext_resource type="Script" uid="uid://rlq2wi7df1wl" path="res://Scripts/level_2.gd" id="1_5qi50"]
 [ext_resource type="AudioStream" uid="uid://dr7jo6ylommug" path="res://Background_Music/level_2.mp3" id="2_1apgh"]
 [ext_resource type="Texture2D" uid="uid://inok31hbbp7d" path="res://Assets/background_tiles/neo_zero_props_and_items_01.png" id="2_4iphx"]
 [ext_resource type="Texture2D" uid="uid://we1akyobdgdw" path="res://Assets/background_tiles/neo_zero_tileset_02.png" id="3_jgkgd"]
@@ -21,8 +21,9 @@
 [ext_resource type="Resource" uid="uid://cnit84jw8rhg6" path="res://Towers/BitBlaster.tres" id="14_bdr3p"]
 [ext_resource type="Resource" uid="uid://dbb5abwuorc31" path="res://Towers/DDoSPulsar.tres" id="18_mu7lp"]
 [ext_resource type="Script" uid="uid://di6jy83p8ibma" path="res://Scripts/lose_screen.gd" id="19_nolpu"]
-[ext_resource type="PackedScene" uid="uid://xlegnwhiie5k" path="res://Scenes/level_3.tscn" id="20_in4v8"]
+[ext_resource type="PackedScene" uid="uid://xlegnwhiie5k" path="res://Scenes/level_4.tscn" id="20_in4v8"]
 [ext_resource type="Script" uid="uid://b824gueiaqdqn" path="res://Scripts/win_screen.gd" id="20_mcj63"]
+[ext_resource type="Theme" uid="uid://b1sqsfg72n3le" path="res://MainTheme.tres" id="21_ue4po"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_bpugw"]
 tile_data = PackedInt32Array(0, 196613, 1, 65536, 196613, 1, 131072, 196613, 1, 196608, 196613, 1, 262144, 196613, 1, 327680, 196613, 1, 393216, 196613, 1, 458752, 196613, 2, 1, 458757, 1, 65537, 458757, 1, 131073, 458757, 1, 196609, 458757, 1, 262145, 458757, 1, 327681, 458757, 1, 393217, 458757, 1, 458753, 458757, 2, 2, 327685, 1, 65538, 327685, 1, 131074, 327685, 1, 196610, 327685, 1, 262146, 327685, 1, 327682, 327685, 1, 393218, 327685, 1, 458754, 327685, 2, 3, 393221, 1, 65539, 393221, 1, 131075, 393221, 1, 196611, 393221, 1, 262147, 393221, 1, 327683, 393221, 1, 393219, 393221, 1, 458755, 393221, 2, 4, 458757, 1, 65540, 458757, 1, 131076, 458757, 1, 196612, 458757, 1, 262148, 458757, 1, 327684, 458757, 1, 393220, 458757, 1, 458756, 458757, 2, 5, 524293, 1, 65541, 524293, 1, 131077, 524293, 1, 196613, 524293, 1, 262149, 524293, 1, 327685, 524293, 1, 393221, 524293, 1, 458757, 524293, 2, 6, 196613, 1, 65542, 196613, 1, 131078, 196613, 1, 196614, 196613, 1, 262150, 196613, 1, 327686, 196613, 1, 393222, 196613, 1, 458758, 196613, 2, 7, 458757, 1, 65543, 458757, 1, 131079, 458757, 1, 196615, 458757, 1, 262151, 458757, 1, 327687, 458757, 1, 393223, 458757, 1, 458759, 458757, 2, 8, 327685, 1, 65544, 327685, 1, 131080, 327685, 1, 196616, 327685, 1, 262152, 327685, 1, 327688, 327685, 1, 393224, 327685, 1, 458760, 327685, 2, 9, 393221, 1, 65545, 393221, 1, 131081, 393221, 1, 196617, 393221, 1, 262153, 393221, 1, 327689, 393221, 1, 393225, 393221, 1, 458761, 393221, 2, 10, 458757, 1, 65546, 458757, 1, 131082, 458757, 1, 196618, 458757, 1, 262154, 458757, 1, 327690, 458757, 1, 393226, 458757, 1, 458762, 458757, 2, 11, 196613, 1, 65547, 196613, 1, 131083, 196613, 1, 196619, 196613, 1, 262155, 196613, 1, 327691, 196613, 1, 393227, 196613, 1, 458763, 196613, 2)
@@ -909,38 +910,46 @@ script = ExtResource("8_4iphx")
 towers = Array[ExtResource("13_u1b78")]([ExtResource("14_bdr3p"), ExtResource("18_mu7lp")])
 
 [node name="RamLabel" type="Label" parent="GameUI" unique_id=980097720]
-offset_left = 182.0
-offset_top = -2.0
-offset_right = 469.0
-offset_bottom = 134.0
+offset_left = 513.0
+offset_top = 50.0
+offset_right = 763.0
+offset_bottom = 130.0
+theme = ExtResource("21_ue4po")
 theme_override_font_sizes/font_size = 50
 text = "Ram:"
 vertical_alignment = 1
 
 [node name="WaveLabel" type="Label" parent="GameUI" unique_id=752997709]
-offset_left = 1447.0
-offset_top = 36.0
-offset_right = 1881.0
-offset_bottom = 112.0
+offset_left = 43.0
+offset_top = 50.0
+offset_right = 477.0
+offset_bottom = 130.0
+theme = ExtResource("21_ue4po")
 theme_override_font_sizes/font_size = 50
 text = "Wave:"
 vertical_alignment = 1
 
 [node name="DataLabel" type="Label" parent="GameUI" unique_id=1791426232]
-offset_left = 468.0
-offset_top = 31.0
-offset_right = 692.0
-offset_bottom = 107.0
+offset_left = 799.0
+offset_top = 50.0
+offset_right = 1023.0
+offset_bottom = 130.0
 size_flags_horizontal = 4
+theme = ExtResource("21_ue4po")
 theme_override_font_sizes/font_size = 50
 text = "Data:"
 vertical_alignment = 1
 
 [node name="ShopUI" type="Panel" parent="GameUI" unique_id=580420187]
-offset_left = 735.0
-offset_top = 113.0
-offset_right = 1189.0
-offset_bottom = 411.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 100.0
+offset_right = 300.0
+offset_bottom = 500.0
+grow_horizontal = 2
+theme = ExtResource("21_ue4po")
 
 [node name="HelpLabel" type="Label" parent="GameUI/ShopUI" unique_id=1806703197]
 layout_mode = 0
@@ -956,11 +965,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TowerList" type="VBoxContainer" parent="GameUI/ShopUI" unique_id=1569718953]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 32.0
-offset_right = 450.0
-offset_bottom = 298.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="LoseScreen" type="CanvasLayer" parent="." unique_id=1328244782]
 process_mode = 3
@@ -972,6 +982,7 @@ offset_left = 485.0
 offset_top = 68.0
 offset_right = 1483.0
 offset_bottom = 341.0
+theme = ExtResource("21_ue4po")
 theme_override_font_sizes/font_size = 200
 text = "You Lose!"
 horizontal_alignment = 1
@@ -982,6 +993,7 @@ offset_left = 618.0
 offset_top = 416.0
 offset_right = 1335.0
 offset_bottom = 593.0
+theme = ExtResource("21_ue4po")
 theme_override_font_sizes/font_size = 100
 text = "Restart"
 
@@ -990,6 +1002,7 @@ offset_left = 622.0
 offset_top = 655.0
 offset_right = 1339.0
 offset_bottom = 832.0
+theme = ExtResource("21_ue4po")
 theme_override_font_sizes/font_size = 100
 text = "Quit"
 
@@ -1004,6 +1017,7 @@ offset_left = 485.0
 offset_top = 68.0
 offset_right = 1483.0
 offset_bottom = 341.0
+theme = ExtResource("21_ue4po")
 theme_override_font_sizes/font_size = 200
 text = "You Win!"
 horizontal_alignment = 1
@@ -1014,6 +1028,7 @@ offset_left = 618.0
 offset_top = 416.0
 offset_right = 1335.0
 offset_bottom = 593.0
+theme = ExtResource("21_ue4po")
 theme_override_font_sizes/font_size = 100
 text = "Continue"
 
@@ -1022,6 +1037,7 @@ offset_left = 622.0
 offset_top = 655.0
 offset_right = 1339.0
 offset_bottom = 832.0
+theme = ExtResource("21_ue4po")
 theme_override_font_sizes/font_size = 100
 text = "Quit"
 

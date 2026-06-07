@@ -21,13 +21,13 @@ func _on_ram_changed(new_amount: int) -> void:
 	update_button_states()
 	
 func _on_data_changed(new_data:int) ->void:
-		data_label.text = "Data: " + str(new_data);
+		data_label.text = "DATA: " + str(new_data);
 
 func update_ram_label() -> void:
 	ram_label.text = "RAM: " + str(GlobalGameState.ram)
 
 func update_data_label() -> void:
-	data_label.text = "Data: " + str(GlobalGameState.data);
+	data_label.text = "DATA: " + str(GlobalGameState.data);
 
 
 func create_tower_buttons() -> void:

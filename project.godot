@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Final-Project"
-run/main_scene="uid://dbwft6vpkmj16"
+run/main_scene="uid://c64cm4t8foe8h"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 

@@ -59,9 +59,7 @@ func handle_tower_pickup() -> void:
 	if closest_tower == null:
 		return
 
-	GlobalGameState.selected_tower_scene = closest_tower.source_scene
-	GlobalGameState.selected_tower_cost = closest_tower.cost
-	
+	GlobalGameState.selected_tower_scene = closest_tower.source_scene	
 	closest_tower.remove_from_group("placed_towers")
 	closest_tower.remove_from_group("player_can_pickup")
 	

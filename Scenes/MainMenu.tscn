@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://c64cm4t8foe8h"]
+
+[ext_resource type="Script" uid="uid://doh0s53ggrak6" path="res://Scripts/main_menu.gd" id="1_8saeu"]
+[ext_resource type="Theme" uid="uid://b1sqsfg72n3le" path="res://MainTheme.tres" id="1_tt5f1"]
+[ext_resource type="FontFile" uid="uid://dh75wpf7cq338" path="res://Fonts/ShareTech-Regular.ttf" id="2_853f1"]
+[ext_resource type="Texture2D" uid="uid://c010xudj8h1uy" path="res://Assets/BackgroundImage.png" id="2_ghw46"]
+[ext_resource type="FontFile" uid="uid://dlmksjd2on04q" path="res://Fonts/BitcountGridDouble-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="3_df05h"]
+
+[node name="MainMenu" type="Control" unique_id=818397174]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8saeu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246587395]
+position = Vector2(968.50006, 537.5)
+scale = Vector2(0.68572444, 0.7076823)
+texture = ExtResource("2_ghw46")
+
+[node name="Title" type="Label" parent="." unique_id=512210523]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -904.0
+offset_top = 35.0
+offset_right = 942.2191
+offset_bottom = 346.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.95334965, 0, 0.30494168, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(4.813075e-07, 0.32375008, 0.85853565, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_df05h")
+theme_override_font_sizes/font_size = 200
+text = "Cyber Defense!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=1213182902]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -100.0
+offset_right = 500.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tt5f1")
+theme_override_fonts/font = ExtResource("2_853f1")
+theme_override_font_sizes/font_size = 150
+text = "Start!"
+
+[node name="QuitButton" type="Button" parent="." unique_id=230530955]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = 160.0
+offset_right = 500.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tt5f1")
+theme_override_fonts/font = ExtResource("2_853f1")
+theme_override_font_sizes/font_size = 150
+text = "Quit"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
