@@ -10,6 +10,15 @@ signal data_changed(new_data)
 signal game_over
 signal victory
 
+func setup_level(starting_ram: int, starting_data: int = 10) -> void:
+	data = starting_data
+	ram = starting_ram
+	selected_tower_scene = null
+	selected_tower_cost = 0
+	
+	ram_changed.emit(ram)
+	data_changed.emit(data)
+
 func add_ram(amount: int) -> void:
 	ram += amount
 	ram_changed.emit(ram)
@@ -41,8 +50,6 @@ func take_base_damage(damage_to_base: int) -> void:
 		game_over.emit()
 
 func reset_game() -> void:
-	data = 10
-	ram = 100
 	selected_tower_scene = null
 	selected_tower_cost = 0
 	
@@ -50,9 +57,7 @@ func reset_game() -> void:
 	get_tree().reload_current_scene()
 
 func next_level() -> void:
-	data = 10
-	ram = 100
 	selected_tower_scene = null
 	selected_tower_cost = 0
 	
-	get_tree().paused = false 
+	get_tree().paused = false

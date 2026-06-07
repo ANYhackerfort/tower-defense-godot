@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://cti4fbqcqhoiv"]
 
 [ext_resource type="Texture2D" uid="uid://dqlsix2tefwj8" path="res://Assets/background_tiles/neo_zero_tiles_and_buildings_01.png" id="1_2a60c"]
+[ext_resource type="Script" uid="uid://rlq2wi7df1wl" path="res://Scenes/level_2.gd" id="1_5qi50"]
+[ext_resource type="AudioStream" uid="uid://dr7jo6ylommug" path="res://Background_Music/level_2.mp3" id="2_1apgh"]
 [ext_resource type="Texture2D" uid="uid://inok31hbbp7d" path="res://Assets/background_tiles/neo_zero_props_and_items_01.png" id="2_4iphx"]
 [ext_resource type="Texture2D" uid="uid://we1akyobdgdw" path="res://Assets/background_tiles/neo_zero_tileset_02.png" id="3_jgkgd"]
 [ext_resource type="Texture2D" uid="uid://dtnj6dujqh1u2" path="res://Assets/background_tiles/neo_zero_buildings_02.png" id="4_bs12r"]
@@ -844,6 +846,10 @@ _data = {
 point_count = 10
 
 [node name="Level2" type="Node2D" unique_id=1758665278]
+script = ExtResource("1_5qi50")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1582599219]
+stream = ExtResource("2_1apgh")
 
 [node name="TileSets" type="Node2D" parent="." unique_id=1934027848]
 

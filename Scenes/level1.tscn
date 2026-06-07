@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://dbwft6vpkmj16"]
 
 [ext_resource type="Texture2D" uid="uid://dqlsix2tefwj8" path="res://Assets/background_tiles/neo_zero_tiles_and_buildings_01.png" id="1_2a60c"]
+[ext_resource type="Script" uid="uid://13k4ymca0t63" path="res://Scenes/level_1.gd" id="1_ocmlb"]
 [ext_resource type="Texture2D" uid="uid://inok31hbbp7d" path="res://Assets/background_tiles/neo_zero_props_and_items_01.png" id="2_4iphx"]
+[ext_resource type="AudioStream" uid="uid://cw6w2fdapcixd" path="res://Background_Music/level_1.mp3" id="2_tlxhh"]
 [ext_resource type="Texture2D" uid="uid://we1akyobdgdw" path="res://Assets/background_tiles/neo_zero_tileset_02.png" id="3_jgkgd"]
 [ext_resource type="Texture2D" uid="uid://dtnj6dujqh1u2" path="res://Assets/background_tiles/neo_zero_buildings_02.png" id="4_bs12r"]
 [ext_resource type="Texture2D" uid="uid://ccrw1u6bjq72k" path="res://Assets/background_tiles/neo_zero_props_02_free.png" id="5_rqhku"]
@@ -12,7 +14,8 @@
 [ext_resource type="Script" uid="uid://dtts6s7xjwjch" path="res://Scripts/wave_manager.gd" id="9_bdr3p"]
 [ext_resource type="Script" uid="uid://d13nde088d4im" path="res://Scripts/tower_placement_manager.gd" id="10_bs12r"]
 [ext_resource type="Script" uid="uid://cgqiu0jiofupp" path="res://Waves/WaveData.gd" id="10_nolpu"]
-[ext_resource type="Resource" uid="uid://32g5j6lw8ey1" path="res://Waves/Level1Wave1.tres" id="11_mcj63"]
+[ext_resource type="Script" uid="uid://bpo2467d56vwk" path="res://Waves/EnemySpawnInfo.gd" id="10_tlxhh"]
+[ext_resource type="PackedScene" uid="uid://bq7kjrmovio76" path="res://Scenes/BasicCrawler.tscn" id="11_rxhxl"]
 [ext_resource type="Resource" uid="uid://d324vp74sblxm" path="res://Waves/Level1Wave2.tres" id="12_af2a1"]
 [ext_resource type="Resource" uid="uid://ckg0vn6qbyh0p" path="res://Waves/Level1Wave3.tres" id="13_ocmlb"]
 [ext_resource type="Script" uid="uid://bkubta0nbgtda" path="res://Towers/Towers.gd" id="13_u1b78"]
@@ -778,6 +781,17 @@ sources/5 = SubResource("TileSetAtlasSource_6i7po")
 pattern_0 = SubResource("TileMapPattern_bpugw")
 pattern_1 = SubResource("TileMapPattern_gjjrj")
 
+[sub_resource type="Resource" id="Resource_pi4fk"]
+script = ExtResource("10_tlxhh")
+enemy_scene = ExtResource("11_rxhxl")
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[sub_resource type="Resource" id="Resource_6xecf"]
+script = ExtResource("10_nolpu")
+spawns = Array[ExtResource("10_tlxhh")]([SubResource("Resource_pi4fk")])
+reward_ram = 80
+metadata/_custom_type_script = "uid://cgqiu0jiofupp"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocmlb"]
 size = Vector2(256, 258)
 
@@ -830,6 +844,10 @@ _data = {
 point_count = 7
 
 [node name="Level1" type="Node2D" unique_id=1758665278]
+script = ExtResource("1_ocmlb")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=764668229]
+stream = ExtResource("2_tlxhh")
 
 [node name="TileSets" type="Node2D" parent="." unique_id=1934027848]
 
@@ -864,7 +882,7 @@ no_build_zones_parent = NodePath("../NoBuildZone")
 
 [node name="WaveManager" type="Node2D" parent="." unique_id=635351749 node_paths=PackedStringArray("paths", "wave_label")]
 script = ExtResource("9_bdr3p")
-tutorial_waves = Array[ExtResource("10_nolpu")]([ExtResource("11_mcj63"), ExtResource("12_af2a1"), ExtResource("13_ocmlb")])
+tutorial_waves = Array[ExtResource("10_nolpu")]([SubResource("Resource_6xecf"), ExtResource("12_af2a1"), ExtResource("13_ocmlb")])
 paths = [NodePath("../Paths/EnemyPath1"), NodePath("../Paths/EnemyPath2")]
 wave_label = NodePath("../GameUI/WaveLabel")
 time_between_waves = 10.0

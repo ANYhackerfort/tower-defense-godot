@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://dn7lwtr82g06u"]
 
+[ext_resource type="Script" uid="uid://ddpf8y268rwm7" path="res://Scenes/level_4.gd" id="1_a51ki"]
 [ext_resource type="Texture2D" uid="uid://dqlsix2tefwj8" path="res://Assets/background_tiles/neo_zero_tiles_and_buildings_01.png" id="1_kgmqw"]
+[ext_resource type="AudioStream" uid="uid://hi3o8vja65uk" path="res://Background_Music/level_4.mp3" id="2_qh6br"]
 [ext_resource type="Texture2D" uid="uid://inok31hbbp7d" path="res://Assets/background_tiles/neo_zero_props_and_items_01.png" id="2_s80er"]
 [ext_resource type="Texture2D" uid="uid://we1akyobdgdw" path="res://Assets/background_tiles/neo_zero_tileset_02.png" id="3_8jhox"]
 [ext_resource type="Texture2D" uid="uid://dtnj6dujqh1u2" path="res://Assets/background_tiles/neo_zero_buildings_02.png" id="4_hed5s"]
@@ -8,10 +10,10 @@
 [ext_resource type="Script" uid="uid://d13nde088d4im" path="res://Scripts/tower_placement_manager.gd" id="6_2awvy"]
 [ext_resource type="Script" uid="uid://dtts6s7xjwjch" path="res://Scripts/wave_manager.gd" id="7_nrv0r"]
 [ext_resource type="Script" uid="uid://cgqiu0jiofupp" path="res://Waves/WaveData.gd" id="8_gmj2a"]
-[ext_resource type="Resource" uid="uid://32g5j6lw8ey1" path="res://Waves/Level1Wave1.tres" id="9_n8e0l"]
-[ext_resource type="Resource" uid="uid://d324vp74sblxm" path="res://Waves/Level1Wave2.tres" id="10_3oi3s"]
-[ext_resource type="Resource" uid="uid://ckg0vn6qbyh0p" path="res://Waves/Level1Wave3.tres" id="11_rybab"]
+[ext_resource type="Resource" uid="uid://c7vseie0u2cvd" path="res://Waves/Level4Wave1.tres" id="10_6xecf"]
+[ext_resource type="Resource" uid="uid://c6lec7hmia3i" path="res://Waves/Level4Wave2.tres" id="11_qh6br"]
 [ext_resource type="PackedScene" uid="uid://dqjw0v05wr4x2" path="res://Scenes/tower_spawn_interactor.tscn" id="12_g6bfm"]
+[ext_resource type="Resource" uid="uid://i5sw2speqjgh" path="res://Waves/Level4Wave3.tres" id="12_nqprj"]
 [ext_resource type="PackedScene" uid="uid://cehsu51da46dt" path="res://Scenes/player_nerd.tscn" id="13_ds67j"]
 [ext_resource type="Script" uid="uid://dc1q7n74f3rgi" path="res://Scripts/shop_area.gd" id="14_tt48c"]
 [ext_resource type="Script" uid="uid://bjrumk3cxx2bi" path="res://Scripts/shop_ui.gd" id="15_3sjjq"]
@@ -19,6 +21,8 @@
 [ext_resource type="Resource" uid="uid://cnit84jw8rhg6" path="res://Towers/BitBlaster.tres" id="17_f8et3"]
 [ext_resource type="Script" uid="uid://di6jy83p8ibma" path="res://Scripts/lose_screen.gd" id="18_acpig"]
 [ext_resource type="Script" uid="uid://b824gueiaqdqn" path="res://Scripts/win_screen.gd" id="19_s8di1"]
+[ext_resource type="Resource" uid="uid://chsnwrfjd82cg" path="res://Towers/Firewall.tres" id="20_qh6br"]
+[ext_resource type="Resource" uid="uid://dbb5abwuorc31" path="res://Towers/DDoSPulsar.tres" id="21_nqprj"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_bpugw"]
 tile_data = PackedInt32Array(0, 196613, 1, 65536, 196613, 1, 131072, 196613, 1, 196608, 196613, 1, 262144, 196613, 1, 327680, 196613, 1, 393216, 196613, 1, 458752, 196613, 2, 1, 458757, 1, 65537, 458757, 1, 131073, 458757, 1, 196609, 458757, 1, 262145, 458757, 1, 327681, 458757, 1, 393217, 458757, 1, 458753, 458757, 2, 2, 327685, 1, 65538, 327685, 1, 131074, 327685, 1, 196610, 327685, 1, 262146, 327685, 1, 327682, 327685, 1, 393218, 327685, 1, 458754, 327685, 2, 3, 393221, 1, 65539, 393221, 1, 131075, 393221, 1, 196611, 393221, 1, 262147, 393221, 1, 327683, 393221, 1, 393219, 393221, 1, 458755, 393221, 2, 4, 458757, 1, 65540, 458757, 1, 131076, 458757, 1, 196612, 458757, 1, 262148, 458757, 1, 327684, 458757, 1, 393220, 458757, 1, 458756, 458757, 2, 5, 524293, 1, 65541, 524293, 1, 131077, 524293, 1, 196613, 524293, 1, 262149, 524293, 1, 327685, 524293, 1, 393221, 524293, 1, 458757, 524293, 2, 6, 196613, 1, 65542, 196613, 1, 131078, 196613, 1, 196614, 196613, 1, 262150, 196613, 1, 327686, 196613, 1, 393222, 196613, 1, 458758, 196613, 2, 7, 458757, 1, 65543, 458757, 1, 131079, 458757, 1, 196615, 458757, 1, 262151, 458757, 1, 327687, 458757, 1, 393223, 458757, 1, 458759, 458757, 2, 8, 327685, 1, 65544, 327685, 1, 131080, 327685, 1, 196616, 327685, 1, 262152, 327685, 1, 327688, 327685, 1, 393224, 327685, 1, 458760, 327685, 2, 9, 393221, 1, 65545, 393221, 1, 131081, 393221, 1, 196617, 393221, 1, 262153, 393221, 1, 327689, 393221, 1, 393225, 393221, 1, 458761, 393221, 2, 10, 458757, 1, 65546, 458757, 1, 131082, 458757, 1, 196618, 458757, 1, 262154, 458757, 1, 327690, 458757, 1, 393226, 458757, 1, 458762, 458757, 2, 11, 196613, 1, 65547, 196613, 1, 131083, 196613, 1, 196619, 196613, 1, 262155, 196613, 1, 327691, 196613, 1, 393227, 196613, 1, 458763, 196613, 2)
@@ -802,13 +806,35 @@ size = Vector2(775.375, 379.3125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu7lp"]
 size = Vector2(1410.6875, 61)
 
-[sub_resource type="Curve2D" id="Curve2D_d1mwp"]
+[sub_resource type="Curve2D" id="Curve2D_6xecf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -13, 375, 0, 0, 0, 0, 1921, 384, 0, 0, 0, 0, 1970, 395)
+}
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_esggg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1343, -16, 0, 0, 0, 0, 1343, 800, 0, 0, 0, 0, 1942, 809)
+}
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_051s1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -24, 384, 0, 0, 0, 0, 511, 384, 0, 0, 0, 0, 510, 1108)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_dt3rr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1990, 798, 0, 0, 0, 0, 500, 803, 0, 0, 0, 0, 510, 1124)
+}
+point_count = 3
 
 [node name="Level4" type="Node2D" unique_id=1758665278]
+script = ExtResource("1_a51ki")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1822611152]
+stream = ExtResource("2_qh6br")
 
 [node name="TileSets" type="Node2D" parent="." unique_id=1934027848]
 
@@ -843,8 +869,8 @@ no_build_zones_parent = NodePath("../NoBuildZone")
 
 [node name="WaveManager" type="Node2D" parent="." unique_id=635351749 node_paths=PackedStringArray("paths", "wave_label")]
 script = ExtResource("7_nrv0r")
-tutorial_waves = Array[ExtResource("8_gmj2a")]([ExtResource("9_n8e0l"), ExtResource("10_3oi3s"), ExtResource("11_rybab")])
-paths = [NodePath("../Paths/EnemyPath1"), NodePath("../Paths/EnemyPath2"), NodePath("../Paths/EnemyPath3")]
+tutorial_waves = Array[ExtResource("8_gmj2a")]([ExtResource("10_6xecf"), ExtResource("11_qh6br"), ExtResource("12_nqprj")])
+paths = [NodePath("../Paths/EnemyPath1"), NodePath("../Paths/EnemyPath2"), NodePath("../Paths/EnemyPath3"), NodePath("../Paths/EnemyPath4")]
 wave_label = NodePath("../GameUI/WaveLabel")
 time_between_waves = 5.0
 
@@ -864,7 +890,7 @@ position = Vector2(734, 534)
 
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=1157163162]
 script = ExtResource("15_3sjjq")
-towers = Array[ExtResource("16_mtnpm")]([ExtResource("17_f8et3")])
+towers = Array[ExtResource("16_mtnpm")]([ExtResource("17_f8et3"), ExtResource("20_qh6br"), ExtResource("21_nqprj")])
 
 [node name="RamLabel" type="Label" parent="GameUI" unique_id=980097720]
 offset_left = 182.0
@@ -1028,14 +1054,17 @@ shape = SubResource("RectangleShape2D_mu7lp")
 
 [node name="Paths" type="Node2D" parent="." unique_id=601449373]
 
-[node name="EnemyPath1" type="Path2D" parent="Paths" unique_id=1730484705]
-curve = SubResource("Curve2D_d1mwp")
+[node name="EnemyPath1" type="Path2D" parent="Paths" unique_id=1943690379]
+curve = SubResource("Curve2D_6xecf")
 
 [node name="EnemyPath2" type="Path2D" parent="Paths" unique_id=1473481952]
 curve = SubResource("Curve2D_esggg")
 
 [node name="EnemyPath3" type="Path2D" parent="Paths" unique_id=1360160056]
 curve = SubResource("Curve2D_051s1")
+
+[node name="EnemyPath4" type="Path2D" parent="Paths" unique_id=760539451]
+curve = SubResource("Curve2D_dt3rr")
 
 [connection signal="pressed" from="LoseScreen/RestartButton" to="LoseScreen" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="LoseScreen/Quit" to="LoseScreen" method="_on_quit_pressed"]

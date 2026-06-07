@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://b42t42pt32sbg"]
+
+[ext_resource type="Script" uid="uid://cgqiu0jiofupp" path="res://Waves/WaveData.gd" id="1_y8nbc"]
+[ext_resource type="Script" uid="uid://bpo2467d56vwk" path="res://Waves/EnemySpawnInfo.gd" id="2_klx63"]
+[ext_resource type="PackedScene" uid="uid://0mlhm7fsaeu4" path="res://Scenes/TankyCrawler.tscn" id="3_415cu"]
+[ext_resource type="PackedScene" uid="uid://dh1infhtxov73" path="res://Scenes/SpeedyHornet.tscn" id="4_tkq16"]
+[ext_resource type="PackedScene" uid="uid://bq7kjrmovio76" path="res://Scenes/BasicCrawler.tscn" id="6_tkq16"]
+
+[sub_resource type="Resource" id="Resource_8av01"]
+script = ExtResource("2_klx63")
+enemy_scene = ExtResource("3_415cu")
+count = 4
+spawn_delay = 1.3
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[sub_resource type="Resource" id="Resource_s4npr"]
+script = ExtResource("2_klx63")
+enemy_scene = ExtResource("3_415cu")
+count = 3
+initial_delay = 9.5
+spawn_delay = 1.3
+path_index = 4
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[sub_resource type="Resource" id="Resource_s866q"]
+script = ExtResource("2_klx63")
+enemy_scene = ExtResource("4_tkq16")
+count = 10
+initial_delay = 2.0
+spawn_delay = 0.45
+path_index = 1
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[sub_resource type="Resource" id="Resource_15fxd"]
+script = ExtResource("2_klx63")
+enemy_scene = ExtResource("6_tkq16")
+count = 8
+initial_delay = 3.0
+spawn_delay = 0.5
+path_index = 3
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[sub_resource type="Resource" id="Resource_kqrpj"]
+script = ExtResource("2_klx63")
+enemy_scene = ExtResource("3_415cu")
+count = 4
+initial_delay = 8.0
+path_index = 2
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[resource]
+script = ExtResource("1_y8nbc")
+wave_name = "Wave told you to be wise!"
+spawns = Array[ExtResource("2_klx63")]([SubResource("Resource_8av01"), SubResource("Resource_s4npr"), SubResource("Resource_s866q"), SubResource("Resource_15fxd"), SubResource("Resource_kqrpj")])
+reward_ram = 20
+metadata/_custom_type_script = "uid://cgqiu0jiofupp"

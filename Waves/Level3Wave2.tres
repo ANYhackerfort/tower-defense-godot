@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://cbl8y51yta7c"]
+
+[ext_resource type="Script" uid="uid://cgqiu0jiofupp" path="res://Waves/WaveData.gd" id="1_x8oqw"]
+[ext_resource type="Script" uid="uid://bpo2467d56vwk" path="res://Waves/EnemySpawnInfo.gd" id="2_le7tt"]
+[ext_resource type="PackedScene" uid="uid://bq7kjrmovio76" path="res://Scenes/BasicCrawler.tscn" id="3_5vo1u"]
+[ext_resource type="PackedScene" uid="uid://dh1infhtxov73" path="res://Scenes/SpeedyHornet.tscn" id="4_5vo1u"]
+[ext_resource type="PackedScene" uid="uid://0mlhm7fsaeu4" path="res://Scenes/TankyCrawler.tscn" id="6_ew3ac"]
+
+[sub_resource type="Resource" id="Resource_8av01"]
+script = ExtResource("2_le7tt")
+enemy_scene = ExtResource("6_ew3ac")
+count = 6
+spawn_delay = 2.0
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[sub_resource type="Resource" id="Resource_s4npr"]
+script = ExtResource("2_le7tt")
+enemy_scene = ExtResource("4_5vo1u")
+count = 4
+initial_delay = 3.0
+spawn_delay = 0.55
+path_index = 3
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[sub_resource type="Resource" id="Resource_s866q"]
+script = ExtResource("2_le7tt")
+enemy_scene = ExtResource("3_5vo1u")
+count = 8
+initial_delay = 8.0
+path_index = 4
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[sub_resource type="Resource" id="Resource_u2fks"]
+script = ExtResource("2_le7tt")
+enemy_scene = ExtResource("6_ew3ac")
+count = 8
+initial_delay = 15.0
+path_index = 2
+metadata/_custom_type_script = "uid://bpo2467d56vwk"
+
+[resource]
+script = ExtResource("1_x8oqw")
+wave_name = "Wave Be wise!"
+spawns = Array[ExtResource("2_le7tt")]([SubResource("Resource_8av01"), SubResource("Resource_s4npr"), SubResource("Resource_s866q"), SubResource("Resource_u2fks")])
+reward_ram = 25
+metadata/_custom_type_script = "uid://cgqiu0jiofupp"
